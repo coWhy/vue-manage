@@ -3,7 +3,7 @@
 ```text
   yarn serve 启动
   yarn build 打包
-  yarn init eslint
+  yarn init eslint修复
 ```
 
 #### 1.配置 eslint
