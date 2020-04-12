@@ -24,7 +24,7 @@ yarn build
 yarn lint
 ```
 
-#### 配置 eslint
+#### 1.配置 eslint
 
 > 1. 配置 .eslintrc.js rules 里面加上规则<br>
 
@@ -40,7 +40,7 @@ yarn lint
     ]
 ```
 
-#### 遇到的问题
+#### 2.遇到的问题
 
 > 当我们重复点击路由导航菜单的时候控制台会报错，错误的缘由是因为 vue-router 版本太新
 > 解决办法:<br>
