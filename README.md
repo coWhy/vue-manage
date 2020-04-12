@@ -1,27 +1,9 @@
-#### vue-manage-sys
+#### 0.指令
 
-## 项目设置
-
-```
-yarn install
-```
-
-### 编译和热加载用于开发
-
-```
-yarn serve
-```
-
-### 编译和缩小生产
-
-```
-yarn build
-```
-
-### Lints 和修复文件
-
-```
-yarn lint
+```text
+  yarn serve 启动
+  yarn build 打包
+  yarn init eslint
 ```
 
 #### 1.配置 eslint
