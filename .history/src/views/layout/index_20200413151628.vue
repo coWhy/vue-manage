@@ -1,21 +1,13 @@
 <template>
   <el-container class="container">
-    <!-- 左侧菜单栏 -->
-    <el-aside width="auto">
+    <el-aside width="200px">
       <common-aside></common-aside>
     </el-aside>
     <el-container>
-      <!-- 头部 -->
       <el-header class="header">
         <common-header></common-header>
       </el-header>
-      <!-- Tab标签 -->
-      <!-- <common-tab class="tab"></common-tab> -->
-      <!-- 主体 -->
-      <el-main>
-        Main
-        <!-- <router-view></router-view> -->
-      </el-main>
+      <el-main class="main">Main</el-main>
     </el-container>
   </el-container>
 </template>

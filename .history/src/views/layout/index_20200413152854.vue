@@ -39,7 +39,7 @@ export default {
   background-color: #626e85; // 头部背景色
   width: 100%;
 }
-.main {
+.el-main {
   padding-top: 0;
 }
 </style>

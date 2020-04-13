@@ -7,12 +7,7 @@ VueRouter.prototype.push = function push(location) {
 }
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    component: () => import('@/views/layout/index')
-  }
-]
+const routes = []
 
 const router = new VueRouter({
   routes

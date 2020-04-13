@@ -10,11 +10,10 @@
         <common-header></common-header>
       </el-header>
       <!-- Tab标签 -->
-      <!-- <common-tab class="tab"></common-tab> -->
+      <common-tab class="tab"></common-tab>
       <!-- 主体 -->
       <el-main>
-        Main
-        <!-- <router-view></router-view> -->
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
