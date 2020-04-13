@@ -1,4 +1,13 @@
-.manage{
+<template>
+  <div class="manage"></div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss" scoped>
+.manage {
   height: 90%;
   padding-bottom: 20px;
   overflow: hidden;
@@ -8,3 +17,4 @@
     align-items: flex-start;
   }
 }
+</style>

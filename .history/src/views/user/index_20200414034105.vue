@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      operateType: 'add', // 操作类型 默认添加  反之 更新
+      operateType: 'add',
       isShow: false,
       tableData: [],
       tableLabel: [
@@ -71,20 +71,17 @@ export default {
         }
       ],
       config: {
-        // 设置分页
         page: 1,
         total: 30,
-        loading: false // 加载条 true 打开 false 关闭
+        loading: false
       },
       operateForm: {
-        // 表单操作的字段
         name: '',
         addr: '',
         age: '',
         birth: '',
         sex: ''
       },
-      // 表单绑定的名称
       operateFormLabel: [
         {
           model: 'name',
@@ -119,7 +116,6 @@ export default {
           label: '地址'
         }
       ],
-      // 查询条件
       searchFrom: {
         keyword: ''
       },
@@ -132,22 +128,25 @@ export default {
     }
   },
   methods: {
-    async getList(name = '') {
+    getList(name = '') {
       this.config.loading = true
       // 搜索时，页码需要设置为1，才能正确返回数据，因为数据是从第一页开始返回的
       name ? (this.config.page = 1) : ''
-      let res = await this.$http.get('/user/getUser', {
-        params: {
-          page: this.config.page,
-          name
-        }
-      })
-      this.tableData = res.data.list.map(item => {
-        item.sexLabel = item.sex === 0 ? '女' : '男'
-        return item
-      })
-      this.config.total = res.data.count
-      this.config.loading = false
+      this.$http
+        .get('/api/user/getUser', {
+          params: {
+            page: this.config.page,
+            name
+          }
+        })
+        .then(res => {
+          this.tableData = res.data.list.map(item => {
+            item.sexLabel = item.sex === 0 ? '女' : '男'
+            return item
+          })
+          this.config.total = res.data.count
+          this.config.loading = false
+        })
     },
     addUser() {
       this.operateForm = {}
@@ -159,38 +158,49 @@ export default {
       this.isShow = true
       this.operateForm = row
     },
-    async confirm() {
+    confirm() {
       if (this.operateType === 'edit') {
-        let res = await this.$http.post('/user/edit', this.operateForm)
-        console.log(res.data)
-        this.isShow = false
-        this.getList()
+        this.$http.post('/api/user/edit', this.operateForm).then(res => {
+          console.log(res.data)
+          this.isShow = false
+          this.getList()
+        })
       } else {
-        let res = this.$http.post('/user/add', this.operateForm)
-        console.log(res.data)
-        this.isShow = false
-        this.getList()
+        this.$http.post('/api/user/add', this.operateForm).then(res => {
+          console.log(res.data)
+          this.isShow = false
+          this.getList()
+        })
       }
     },
     delUser(row) {
-      this.$confirm('确定要删除吗?', '温馨提示', {
+      this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       })
-        .then(async () => {
+        .then(() => {
           let id = row.id
-          let res = await this.$http.get('/user/del', {
-            params: {
-              id
-            }
-          })
-          console.log(res.data)
-          this.$message.success('删除成功')
-          this.getList()
+          this.$http
+            .get('/api/user/del', {
+              params: {
+                id
+              }
+            })
+            .then(res => {
+              console.log(res.data)
+              this.$message({
+                type: 'success',
+                message: '删除成功!'
+              })
+              this.getList()
+            })
         })
         .catch(() => {
-          this.$message.info('已取消删除')
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          })
         })
     }
   },

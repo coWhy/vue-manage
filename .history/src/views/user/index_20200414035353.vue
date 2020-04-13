@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      operateType: 'add', // 操作类型 默认添加  反之 更新
+      operateType: 'add',
       isShow: false,
       tableData: [],
       tableLabel: [
@@ -77,14 +77,13 @@ export default {
         loading: false // 加载条 true 打开 false 关闭
       },
       operateForm: {
-        // 表单操作的字段
         name: '',
         addr: '',
         age: '',
         birth: '',
         sex: ''
       },
-      // 表单绑定的名称
+      // 表单操作列
       operateFormLabel: [
         {
           model: 'name',
@@ -119,7 +118,6 @@ export default {
           label: '地址'
         }
       ],
-      // 查询条件
       searchFrom: {
         keyword: ''
       },

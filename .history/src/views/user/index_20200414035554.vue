@@ -77,14 +77,13 @@ export default {
         loading: false // 加载条 true 打开 false 关闭
       },
       operateForm: {
-        // 表单操作的字段
         name: '',
         addr: '',
         age: '',
         birth: '',
         sex: ''
       },
-      // 表单绑定的名称
+      // 表单操作列
       operateFormLabel: [
         {
           model: 'name',

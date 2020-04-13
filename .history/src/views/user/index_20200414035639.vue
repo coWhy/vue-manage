@@ -84,7 +84,7 @@ export default {
         birth: '',
         sex: ''
       },
-      // 表单绑定的名称
+      // 表单操作列
       operateFormLabel: [
         {
           model: 'name',
