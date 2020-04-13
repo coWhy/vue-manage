@@ -3,7 +3,6 @@ export default {
     menuList: [], // 全部菜单
     curMenu: null, // 点击选中的菜单
     tagList: [
-      // 首页是不可关闭的
       {
         path: '/',
         name: 'home',
@@ -31,8 +30,6 @@ export default {
     },
     // 关闭选中的tag
     closeTag(state, selectedTag) {
-      // if (selectedTag.name !== 'home') {
-      // }
       // 找到tag的索引 进行删除
       let result = state.tagList.findIndex(
         item => item.name === selectedTag.name

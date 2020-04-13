@@ -31,13 +31,13 @@ export default {
     },
     // 关闭选中的tag
     closeTag(state, selectedTag) {
-      // if (selectedTag.name !== 'home') {
-      // }
-      // 找到tag的索引 进行删除
-      let result = state.tagList.findIndex(
-        item => item.name === selectedTag.name
-      )
-      state.tagList.splice(result, 1)
+      if (selectedTag.name !== 'home') {
+        // 找到tag的索引 进行删除
+        let result = state.tagList.findIndex(
+          item => item.name === selectedTag.name
+        )
+        state.tagList.splice(result, 1)
+      }
     }
   },
   actions: {},

@@ -28,6 +28,7 @@
       :index="item.title"
       v-for="item in hasChildrenList"
       :key="item.title"
+      @click="handleClickMenu(item)"
     >
       <template slot="title">
         <i :class="item.icon"></i>
@@ -38,7 +39,7 @@
           :index="subItem.path"
           v-for="subItem in item.children"
           :key="subItem.title"
-          @click="handleClickMenu(subItem)"
+          @click="handleClickMenu(item)"
         >
           <i :class="subItem.icon"></i>
           <span slot="title">{{ subItem.title }}</span>

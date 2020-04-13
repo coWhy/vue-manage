@@ -10,7 +10,7 @@
         <common-header></common-header>
       </el-header>
       <!-- Tab标签 -->
-      <common-tag class="tag"></common-tag>
+      <!-- <common-tab class="tab"></common-tab> -->
       <!-- 主体 -->
       <el-main>
         Main

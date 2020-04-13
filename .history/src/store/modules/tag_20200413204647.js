@@ -2,15 +2,7 @@ export default {
   state: {
     menuList: [], // 全部菜单
     curMenu: null, // 点击选中的菜单
-    tagList: [
-      // 首页是不可关闭的
-      {
-        path: '/',
-        name: 'home',
-        title: '首页',
-        icon: 'el-icon-s-home'
-      }
-    ] // 存放tags 点击后 就存到里面去
+    tagList: [] // 存放tags 点击后 就存到里面去
   },
   mutations: {
     // 点击 菜单之后 对应的tab 标签也要 进入 tabList 进行存放
@@ -31,8 +23,6 @@ export default {
     },
     // 关闭选中的tag
     closeTag(state, selectedTag) {
-      // if (selectedTag.name !== 'home') {
-      // }
       // 找到tag的索引 进行删除
       let result = state.tagList.findIndex(
         item => item.name === selectedTag.name

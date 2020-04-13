@@ -28,6 +28,7 @@
       :index="item.title"
       v-for="item in hasChildrenList"
       :key="item.title"
+      @click="handleClickMenu(item)"
     >
       <template slot="title">
         <i :class="item.icon"></i>

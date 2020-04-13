@@ -5,9 +5,7 @@
       <i class="fa fa-outdent" aria-hidden="true"></i>
       <!-- 面包屑导航 -->
       <el-breadcrumb separator="/">
-        <!-- 默认保留一个 首页 -->
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <!-- curMenu 不为null的时候才渲染出来 -->
         <el-breadcrumb-item :to="curMenu.path" v-if="curMenu">
           {{ curMenu.title }}
         </el-breadcrumb-item>
