@@ -18,7 +18,7 @@
           <p>上次登录地点:<span>江苏省常州市金坛区</span></p>
         </div>
       </el-card>
-      <el-card shadow="hover" style="height:438px;margin-top:20px"> </el-card>
+      <el-card shadow="hover" style="height:418px;margin-top:20px"> </el-card>
     </el-col>
     <!-- 右侧 -->
     <el-col :span="16">
@@ -46,7 +46,7 @@
       <!-- 底部 -->
       <el-card shadow="hover">
         <!-- 图表 -->
-        <div style="height:240px"></div>
+        <div style="height:210px"></div>
       </el-card>
       <div class="graph">
         <el-card shadow="hover">
@@ -81,7 +81,7 @@ export default {
           name: '今日收藏订单',
           value: 2234,
           icon: 'fa fa-briefcase',
-          color: '#1d7cf3'
+          color: '#2ec7c9'
         },
         {
           name: '今日支付订单3',

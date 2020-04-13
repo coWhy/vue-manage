@@ -75,13 +75,13 @@ export default {
           name: '今日支付订单',
           value: 1234,
           icon: 'fa fa-car',
-          color: '#2ec7c9'
+          color: '#4ffffb'
         },
         {
           name: '今日收藏订单',
           value: 2234,
           icon: 'fa fa-briefcase',
-          color: '#1d7cf3'
+          color: '#2ec7c9'
         },
         {
           name: '今日支付订单3',

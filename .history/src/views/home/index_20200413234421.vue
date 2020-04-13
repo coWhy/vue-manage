@@ -18,24 +18,15 @@
           <p>上次登录地点:<span>江苏省常州市金坛区</span></p>
         </div>
       </el-card>
-      <el-card shadow="hover" style="height:438px;margin-top:20px"> </el-card>
+      <el-card shadow="hover" style="height:598px;margin-top:20px"> </el-card>
     </el-col>
     <!-- 右侧 -->
     <el-col :span="16">
       <!-- 顶部  -->
       <div class="num">
-        <el-card
-          shadow="hover"
-          v-for="item in countData"
-          :key="item.name"
-          :body-style="{ display: 'flex', padding: 0 }"
-        >
+        <el-card shadow="hover" v-for="item in countData" :key="item.name">
           <!-- 图标部分 -->
-          <i
-            class="icon"
-            :class="item.icon"
-            :style="{ background: item.color }"
-          ></i>
+          <i class="icon" :class="item.icon"></i>
           <!-- 详情部分  -->
           <div class="detail">
             <p class="num">{{ item.value }}</p>
@@ -46,7 +37,7 @@
       <!-- 底部 -->
       <el-card shadow="hover">
         <!-- 图表 -->
-        <div style="height:240px"></div>
+        <div style="height:210px"></div>
       </el-card>
       <div class="graph">
         <el-card shadow="hover">
@@ -81,7 +72,7 @@ export default {
           name: '今日收藏订单',
           value: 2234,
           icon: 'fa fa-briefcase',
-          color: '#1d7cf3'
+          color: '#2ec7c9'
         },
         {
           name: '今日支付订单3',
@@ -98,7 +89,7 @@ export default {
         {
           name: '今日支付订单5',
           value: 1234,
-          icon: 'el-icon-success',
+          icon: 'fa fa-compass',
           color: '#2ec7c9'
         },
         {
