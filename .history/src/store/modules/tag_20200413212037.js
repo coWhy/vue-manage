@@ -41,9 +41,7 @@ export default {
       state.tagList.splice(result, 1)
     },
     // 折叠左侧菜单栏
-    collapseAsideMenu(state) {
-      state.isCollapse = !state.isCollapse
-    }
+    collapseAside() {}
   },
   actions: {},
   modules: {}

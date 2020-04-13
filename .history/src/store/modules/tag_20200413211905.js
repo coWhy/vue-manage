@@ -1,6 +1,6 @@
 export default {
   state: {
-    isCollapse: false, // 左侧菜单栏是否折叠
+    isCollapse: false,
     curMenu: null, // 点击选中的菜单
     menuList: [], // 全部菜单
     tagList: [
@@ -39,10 +39,6 @@ export default {
         item => item.name === selectedTag.name
       )
       state.tagList.splice(result, 1)
-    },
-    // 折叠左侧菜单栏
-    collapseAsideMenu(state) {
-      state.isCollapse = !state.isCollapse
     }
   },
   actions: {},

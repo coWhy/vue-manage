@@ -130,9 +130,8 @@ export default {
   height: 100%;
   border: none;
 }
-// 折叠样式
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
+  width: 150px;
   min-height: 400px;
 }
 </style>

@@ -2,7 +2,6 @@
   <div class="tags">
     <!--  tabs标签 
   不是首页才可以关闭
-  选中tag颜色变化 :effect="$route.name === tag.name ? 'dark' : 'plain'"
   -->
     <el-tag
       size="small"

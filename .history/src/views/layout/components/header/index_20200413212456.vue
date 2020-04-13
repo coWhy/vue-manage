@@ -3,11 +3,7 @@
     <div class="l-content">
       <!-- 折叠标签 可以折叠左侧菜单栏 折叠：fa fa-outdent 展开： fa fa-indent -->
       <i
-        :class="
-          $store.state.tag.isCollapse === true
-            ? 'fa fa-outdent'
-            : 'fa fa-indent '
-        "
+        class="fa fa-outdent"
         aria-hidden="true"
         @click="collapseAsideMenu()"
       ></i>
@@ -44,7 +40,10 @@ export default {
   computed: {
     ...mapState({
       curMenu: state => state.tag.curMenu // 选中的菜单对象
-    })
+    }),
+    isCollapse() {
+      return this.$store.state.tagisCollapse
+    }
   },
   data() {
     return {

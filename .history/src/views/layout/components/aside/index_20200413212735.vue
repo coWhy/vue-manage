@@ -5,7 +5,6 @@
     :background-color="asideSetting.bgColor"
     :text-color="asideSetting.texteColor"
     :active-text-color="asideSetting.activeTextColor"
-    :collapse="isCollapse"
   >
     <!-- 这是没有子级菜单的 
     handleClickMenu(item) 将选中的菜单元素存入store中的menu 用于tab使用
@@ -129,10 +128,5 @@ export default {
   // 菜单占满容器
   height: 100%;
   border: none;
-}
-// 折叠样式
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
 }
 </style>
