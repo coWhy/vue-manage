@@ -18,17 +18,9 @@
           <p>上次登录地点:<span>江苏省常州市金坛区</span></p>
         </div>
       </el-card>
-      <!-- 图表表格 -->
+      <!-- Echart图表 -->
       <el-card shadow="hover" style="height:438px;margin-top:20px">
-        <el-table :data="tableData">
-          <el-table-column
-            show-overflow-tooltip
-            v-for="(val, key) in tableLabel"
-            :key="key"
-            :prop="key"
-            :label="val"
-          ></el-table-column>
-        </el-table>
+        <el-table></el-table>
       </el-card>
     </el-col>
     <!-- 右侧 -->
@@ -56,19 +48,15 @@
       </div>
       <!-- 底部 -->
       <el-card shadow="hover">
-        <!-- Echart 图表 -->
-        <echart style="height:240px" :chartData="echartData.order"></echart>
+        <!-- 图表 -->
+        <div style="height:240px"></div>
       </el-card>
       <div class="graph">
         <el-card shadow="hover">
-          <echart style="height:200px" :chartData="echartData.user"></echart>
+          <div style="height:200px"></div>
         </el-card>
         <el-card shadow="hover">
-          <echart
-            style="height:200px"
-            :chartData="echartData.video"
-            :isAxisChart="false"
-          ></echart>
+          <div style="height:200px"></div>
         </el-card>
       </div>
     </el-col>
@@ -76,11 +64,7 @@
 </template>
 
 <script>
-import Echart from '@/components/echart'
 export default {
-  components: {
-    Echart
-  },
   data() {
     return {
       // 用户信息
@@ -127,68 +111,26 @@ export default {
           color: '#2ec7c9'
         }
       ],
-      tableData: [],
-      tableLabel: {
-        name: '课程',
-        todayBuy: '今日购买',
-        monthBuy: '本月购买',
-        totalBuy: '总购买'
-      },
-      echartData: {
-        order: {
-          xData: [],
-          series: []
-        },
-        user: {
-          xData: [],
-          series: []
-        },
-        video: {
-          series: []
-        }
-      }
+      tableData: []
     }
   },
   methods: {
-    async getTableData() {
-      let res = await this.$http.get('/home/getData')
-      res = res.data
-      this.tableData = res.data.tableData
-      // 订单折线图
-      const order = res.data.orderData
-      this.echartData.order.xData = order.date
-      // 第一步取出series中的name部分——键名
-      let keyArray = Object.keys(order.data[0])
-      // 第二步，循环添加数据
-      keyArray.forEach(key => {
-        this.echartData.order.series.push({
-          name: key === 'wechat' ? '小程序' : key,
-          data: order.data.map(item => item[key]),
-          type: 'line'
-        })
-      })
-      // 用户柱状图
-      this.echartData.user.xData = res.data.userData.map(item => item.date)
-      this.echartData.user.series.push({
-        name: '新增用户',
-        data: res.data.userData.map(item => item.new),
-        type: 'bar'
-      })
-      this.echartData.user.series.push({
-        name: '活跃用户',
-        data: res.data.userData.map(item => item.active),
-        type: 'bar',
-        barGap: 0
-      })
-      // 视频饼图
-      this.echartData.video.series.push({
-        data: res.data.videoData,
-        type: 'pie'
-      })
+    async getVideoData() {
+      const res = await this.$http.get('/home/getData')
+      const {
+        code,
+        data: { tableData }
+      } = res.data
+      if (code === 20000) {
+        this.tableData = tableData
+      } else {
+        this.$message.error('获取信息失败')
+      }
+      console.log(res.data)
     }
   },
   created() {
-    this.getTableData()
+    this.getVideoData()
   }
 }
 </script>

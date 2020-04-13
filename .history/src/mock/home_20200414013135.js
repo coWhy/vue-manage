@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 // 图表数据
 let List = []
 export default {
-  getStatisticalData: () => {
+  getData: () => {
     for (let i = 0; i < 7; i++) {
       List.push(
         Mock.mock({

@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 // 图表数据
 let List = []
 export default {
-  getStatisticalData: () => {
+  a: () => {
     for (let i = 0; i < 7; i++) {
       List.push(
         Mock.mock({
@@ -80,21 +80,13 @@ export default {
           },
           {
             date: '周日',
-            new: Mock.Random.integer(1, 100),
+            new: Mock.Random.integer(1, 100),a
             active: Mock.Random.integer(100, 1000)
           }
         ],
         // 折线图
         orderData: {
-          date: [
-            '20191001',
-            '20191002',
-            '20191003',
-            '20191004',
-            '20191005',
-            '20191006',
-            '20191007'
-          ],
+          date: ['20191001', '20191002', '20191003', '20191004', '20191005', '20191006', '20191007'],
           data: List
         },
         tableData: [

@@ -61,14 +61,10 @@
       </el-card>
       <div class="graph">
         <el-card shadow="hover">
-          <echart style="height:200px" :chartData="echartData.user"></echart>
+          <echart style="height:200px"></echart>
         </el-card>
         <el-card shadow="hover">
-          <echart
-            style="height:200px"
-            :chartData="echartData.video"
-            :isAxisChart="false"
-          ></echart>
+          <echart style="height:200px"></echart>
         </el-card>
       </div>
     </el-col>

@@ -61,14 +61,10 @@
       </el-card>
       <div class="graph">
         <el-card shadow="hover">
-          <echart style="height:200px" :chartData="echartData.user"></echart>
+          <echart style="height:200px"></echart>
         </el-card>
         <el-card shadow="hover">
-          <echart
-            style="height:200px"
-            :chartData="echartData.video"
-            :isAxisChart="false"
-          ></echart>
+          <echart style="height:200px"></echart>
         </el-card>
       </div>
     </el-col>
@@ -151,7 +147,7 @@ export default {
   },
   methods: {
     async getTableData() {
-      let res = await this.$http.get('/home/getData')
+      const res = await this.$http.get('/home/getData')
       res = res.data
       this.tableData = res.data.tableData
       // 订单折线图
