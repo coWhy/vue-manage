@@ -13,10 +13,7 @@
           </div>
         </div>
         <!-- 登录后的相关信息描述 如ip 等-->
-        <div class="login-info">
-          <p>上次登录时间:<span>2020年4月13日</span></p>
-          <p>上次登录地点:<span>江苏省常州市金坛区</span></p>
-        </div>
+        <div class="login-info"></div>
       </el-card>
       <el-card shadow="hover" style="height:438px;margin-top:20px"> </el-card>
     </el-col>
@@ -24,13 +21,13 @@
     <el-col :span="16">
       <!-- 顶部  -->
       <div class="num">
-        <el-card shadow="hover" v-for="item in countData" :key="item.name">
+        <el-card shadow="hover" v-for="item in 6" :key="item">
           <!-- 图标部分 -->
-          <i class="icon" :class="item.icon"></i>
+          <i class="icon"></i>
           <!-- 详情部分  -->
           <div class="detail">
-            <p class="num">{{ item.value }}</p>
-            <p class="txt">{{ item.name }}</p>
+            <p class="num">$1234</p>
+            <p class="txt">今日支付订单</p>
           </div>
         </el-card>
       </div>
@@ -58,47 +55,9 @@ export default {
       // 用户信息
       userInfo: {
         username: 'admin', // 用户名
-        avatar: require('@/assets/images/user.jpg'), // 用户头像
-        access: '超级管理员' // 登录权限
-      },
-      countData: [
-        {
-          name: '今日支付订单',
-          value: 1234,
-          icon: 'fa fa-car',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日收藏订单',
-          value: 2234,
-          icon: 'fa fa-briefcase',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单3',
-          value: 3234,
-          icon: 'fa fa-calculator',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单4',
-          value: 4234,
-          icon: 'fa fa-times',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单5',
-          value: 1234,
-          icon: 'fa fa-compass',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单6',
-          value: 1234,
-          icon: 'el-icon-success',
-          color: '#2ec7c9'
-        }
-      ]
+        avatar: require('@/assets/images/user.png'), // 用户头像
+        access: '超级管理员'
+      }
     }
   },
   methods: {

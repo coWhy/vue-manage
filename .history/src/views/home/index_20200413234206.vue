@@ -89,7 +89,7 @@ export default {
         {
           name: '今日支付订单5',
           value: 1234,
-          icon: 'fa fa-compass',
+          icon: 'el-icon-success',
           color: '#2ec7c9'
         },
         {

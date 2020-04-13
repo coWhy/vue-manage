@@ -10,7 +10,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // 自定义全局插件
 import http from '@/plugins/http' // 自定义全局axios
-// 引入Mock 主要是用于前端模拟使用 使用时 记得注释掉
 import './mock'
 
 Vue.config.productionTip = false

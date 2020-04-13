@@ -83,13 +83,13 @@ export default {
         {
           name: '今日支付订单4',
           value: 4234,
-          icon: 'fa fa-times',
+          icon: 'el-icon-success',
           color: '#2ec7c9'
         },
         {
           name: '今日支付订单5',
           value: 1234,
-          icon: 'fa fa-compass',
+          icon: 'el-icon-success',
           color: '#2ec7c9'
         },
         {

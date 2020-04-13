@@ -24,13 +24,14 @@
     <el-col :span="16">
       <!-- 顶部  -->
       <div class="num">
-        <el-card shadow="hover" v-for="item in countData" :key="item.name">
+        <el-card shadow="hover" v-for="item in 6" :key="item">
           <!-- 图标部分 -->
-          <i class="icon" :class="item.icon"></i>
+
+          <i id="icon" class="fa fa-briefcase" aria-hidden="true"></i>
           <!-- 详情部分  -->
           <div class="detail">
-            <p class="num">{{ item.value }}</p>
-            <p class="txt">{{ item.name }}</p>
+            <p class="num">$1234</p>
+            <p class="txt">今日支付订单</p>
           </div>
         </el-card>
       </div>
@@ -61,44 +62,7 @@ export default {
         avatar: require('@/assets/images/user.jpg'), // 用户头像
         access: '超级管理员' // 登录权限
       },
-      countData: [
-        {
-          name: '今日支付订单',
-          value: 1234,
-          icon: 'fa fa-car',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日收藏订单',
-          value: 2234,
-          icon: 'fa fa-briefcase',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单3',
-          value: 3234,
-          icon: 'fa fa-calculator',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单4',
-          value: 4234,
-          icon: 'fa fa-times',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单5',
-          value: 1234,
-          icon: 'fa fa-compass',
-          color: '#2ec7c9'
-        },
-        {
-          name: '今日支付订单6',
-          value: 1234,
-          icon: 'el-icon-success',
-          color: '#2ec7c9'
-        }
-      ]
+      countData: [{ name: '今日支付订单', value: 1234, icon: '' }]
     }
   },
   methods: {
